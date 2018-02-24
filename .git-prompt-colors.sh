@@ -1,10 +1,10 @@
 override_git_prompt_colors() {
   GIT_PROMPT_THEME_NAME="Custom"
 
-  GIT_PROMPT_START_USER="\n${White}⻯-${ResetColor}〔 ${BoldYellow}${PathShort}${ResetColor} 〕${ResetColor}"
+  GIT_PROMPT_START_USER="\n💚\n${White}📂${ResetColor}〔 ${BoldYellow}${PathShort}${ResetColor} 〕${ResetColor}"
   GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"
    
-  GIT_PROMPT_END_USER="\n${White}♑︎-${ResetColor}〔 ${Cyan}${USER}${BoldGreen} ❣ ${Yellow}${HOSTNAME}${ResetColor} 〕~ ${White}${Time12a}${ResetColor} ❡ "
+  GIT_PROMPT_END_USER="\n${White}⌨️ ${ResetColor}〔 ${Cyan}${USER}${BoldGreen} ❣ ${Yellow}${HOSTNAME}${ResetColor} 〕~ ${White}${Time12a}${ResetColor} ❡ "
   GIT_PROMPT_END_ROOT="${GIT_PROMPT_END_USER}"
 
   GIT_PROMPT_ONLY_IN_REPO=0
