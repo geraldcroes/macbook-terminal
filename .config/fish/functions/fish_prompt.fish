@@ -43,10 +43,13 @@ function fish_prompt
 
     # Various variables you might want for your PS1 prompt instead
     set Time (date +%R)
-    set PathShort (pwd|sed "s=$HOME=~=")
+    set -l home_escaped (echo -n $HOME | sed 's/\//\\\\\//g')
+    set -l PathShort (echo -n $PWD | sed "s/^$home_escaped/~/" | sed 's/ /%20/g')
+    set length (echo -n $PathShort | wc -c)
+    if test "$length" -ge "70" 
+        set PathShort (prompt_pwd)
+    end
 
-#    set PROMPT_START "$Yellow$PathShort$ResetColor"
-#    set PROMPT_END " \n$WHITE$Time$ResetColor  \$ "
     set PROMPT_START_BEGIN "\n💚"
     set PROMPT_START_PATH "\n📂〔 $BYellow$PathShort$ResetColor 〕"
     set PROMPT_START_GIT "\n🗃"
@@ -117,4 +120,3 @@ function fish_prompt
 
     echo -e $PS1
 end
-
