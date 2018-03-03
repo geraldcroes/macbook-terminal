@@ -3,6 +3,9 @@ function fish_prompt
     if not set -q __GIT_PROMPT_DIR
         set __GIT_PROMPT_DIR /usr/local/share
     end
+    
+    set GIT_PROMPT_ONLY_IN_REPO 0
+    set GIT_PROMPT_FETCH_REMOTE_STATUS 0
 
     #Variables
     set HOSTNAME (hostname)
@@ -107,7 +110,6 @@ function fish_prompt
 
         set STATUS "$STATUS$ResetColor$GIT_PROMPT_SUFFIX"
 
-        #set PS1 "$PROMPT_START_BEGIN$PROMPT_START_PATH$STATUS$PROMPT_START_PROMPT$PROMPT_END"
         set PS1 "$PROMPT_START_BEGIN$PROMPT_START_WHO$PROMPT_START_PATH$PROMPT_START_GIT$STATUS$PROMPT_END"
     else
         set PS1 "$PROMPT_START_BEGIN$PROMPT_START_WHO$PROMPT_START_PATH$PROMPT_END"
